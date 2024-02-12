@@ -11,8 +11,11 @@ public class GestCar {
 	private DaoCar daoCar = new DaoCarMySql();
 	
 	public boolean add (Coche c) {
-		boolean add = daoCar.addCar(c);
-		return add;
+		if (!c.getBrand().isEmpty() && !c.getModel().isEmpty()) {
+			boolean add = daoCar.addCar(c);
+			return add;
+		}
+		return false;
 	}
 	
 	public boolean delete(int id) {
@@ -21,8 +24,11 @@ public class GestCar {
 	}
 	
 	public boolean update (Coche c) {
-		boolean update = daoCar.updateCar(c);
-		return update;
+		if (!c.getBrand().isEmpty() && !c.getModel().isEmpty()) {
+			boolean update = daoCar.updateCar(c);
+			return update;
+	}
+		return false;
 	}
 	
 	public Coche getCarById (int id) {

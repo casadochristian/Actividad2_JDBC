@@ -6,11 +6,13 @@ import java.util.Scanner;
 
 import entidad.Coche;
 import entidad.Pasajero;
+import negocio.GestCar;
 import negocio.GestPasajero;
 
 public class PasajeroMenu {
 	private GestPasajero gp = new GestPasajero();
 	private static Scanner sc = new Scanner(System.in);
+	private GestCar gc = new GestCar();
 	
 	public void add() {
 		System.out.println("Añadiendo un nuevo pasajero");
@@ -66,5 +68,45 @@ public class PasajeroMenu {
 		listPasajeros = gp.listAll();
 		System.out.println("Lista completa de pasajeros : " + listPasajeros);
 	}
+	/**
+	public void addPasajeroToCoche() {
+		System.out.print("Introduzca el ID del coche para añadir un pasajero");
+		int idCoche = sc.nextInt();
+		sc.nextLine();
+		
+		Coche carCheck = gc.getCarById(idCoche);
+		if (carCheck == null) {
+			System.out.println("El coche no existe, puede consultar la lista completa en la opción 5");
+		}else {
 
-}
+			System.out.print("Introduzca el id del pasajero que quiere añadir al coche");
+			int idPasajero = sc.nextInt();
+
+			Pasajero p = new Pasajero();
+			p.setId(idPasajero);
+			p.setCoche();
+			
+			boolean addPasajeroToCoche = gp.addPasajeroToCoche(p);
+
+			if (addPasajeroToCoche) {
+			System.out.println("El pasajero ha sido añadido correctamente : " + p);
+				} else {
+			System.out.println("Error en el proceso");
+				}
+		}
+
+
+			
+		}
+
+
+	
+	public void deletePasajeroFromCoche(int idPasajero, int idCoche) {
+		return deletePasajeroFromCoche;
+	}
+
+	public void listPasajerosByCarId (int idCoche) {
+		return listPasajerosByCarId;
+		
+	}*/
+	}

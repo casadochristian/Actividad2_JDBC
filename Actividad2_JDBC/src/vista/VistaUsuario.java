@@ -37,9 +37,10 @@ public class VistaUsuario {
 				break;
 			case 6:
 				System.out.println("Bienvenido a la gestión de pasajeros");
+				int opcionSubMenu = 0;
 					do {
 						menuPasajeros();
-						int opcionSubMenu = sc.nextInt();
+						opcionSubMenu = sc.nextInt();
 						sc.nextLine();
 						
 						switch (opcionSubMenu){ 
@@ -55,9 +56,21 @@ public class VistaUsuario {
 						case 4:
 							pm.listAll();
 							break;
+						case 5:
+							//pm.addPasajeroToCoche();
+							break;
+						case 6:
+							//pm.deletePasajeroFromCoche();
+							break;
+						case 7:
+							//pm.listPasajerosByCarId();
+							break;
+						case 8:
+							System.out.println("Volviendo al menú principal");
+						default:
+							System.out.println("Opción errónea");
 						}
-					}while(!fin);
-					System.out.println("Fin de programa");
+					}while(opcionSubMenu !=8);
 				
 				break;
 			case 0:
@@ -90,9 +103,6 @@ public class VistaUsuario {
 		System.out.println("5- Añadir pasajero a un coche");
 		System.out.println("6- Eliminar pasajero de un coche");
 		System.out.println("7- Listar todos los pasajeros de un coche");
-		
+		System.out.println("8- Volver al menú principal");		
 	}
-
-	
-
 }
